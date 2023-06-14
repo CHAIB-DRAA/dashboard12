@@ -32,7 +32,7 @@ export default function ClientId() {
  useEffect(() => {
    async function fetchData() {
      const id = params.id.toString();
-     const response = await fetch(`http://localhost:5050/events/${params.id.toString()}`);
+     const response = await fetch(`https://fullcalendar-backend.onrender.com/events/${params.id.toString()}`);
       
      if (!response.ok) {
        const message = `An error has occurred: ${response.statusText}`;

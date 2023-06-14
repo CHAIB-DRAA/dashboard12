@@ -18,7 +18,7 @@ export default function EditRelation() {
  useEffect(() => {
    async function fetchData() {
      const id = params.id.toString();
-     const response = await fetch(`http://localhost:5050/relation_autre/${params.id.toString()}`);
+     const response = await fetch(`https://fullcalendar-backend.onrender.com/relation_autre/${params.id.toString()}`);
  
      if (!response.ok) {
        const message = `An error has occurred: ${response.statusText}`;
@@ -58,7 +58,7 @@ export default function EditRelation() {
    };
  
    // This will send a post request to update the data in the database.
-   await fetch(`http://localhost:5050/relation_autre/${params.id}`, {
+   await fetch(`https://fullcalendar-backend.onrender.com/relation_autre/${params.id}`, {
      method: "PATCH",
      body: JSON.stringify(editedPerson),
      headers: {

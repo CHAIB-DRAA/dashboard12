@@ -3,7 +3,7 @@
 // Function to create a new event
 export const createEvent = async (eventData , imageId) => {
     try {
-      const response = await fetch(`http://localhost:5050/records/${imageId}/upload-image`, {
+      const response = await fetch(`https://fullcalendar-backend.onrender.com/records/${imageId}/upload-image`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export const createEvent = async (eventData , imageId) => {
 // Function to fetch all events
 export const getEvents = async () => {
   try {
-    const response = await fetch('http://localhost:5050/events');
+    const response = await fetch('https://fullcalendar-backend.onrender.com/events');
 
     if (!response.ok) {
       throw new Error(`An error occurred: ${response.statusText}`);
@@ -45,7 +45,7 @@ export const getEvents = async () => {
 // Function to delete an event
 export const deleteEvent = async (eventId) => {
   try {
-    const response = await fetch(`http://localhost:5050/events/${eventId}`, {
+    const response = await fetch(`https://fullcalendar-backend.onrender.com/events/${eventId}`, {
       method: 'DELETE',
     });
 
@@ -64,7 +64,7 @@ export const deleteEvent = async (eventId) => {
 // Function to update an event
 export const updateEvent = async (eventId, eventData) => {
   try {
-    const response = await fetch(`http://localhost:5050/events/${eventId}`, {
+    const response = await fetch(`https://fullcalendar-backend.onrender.com/events/${eventId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

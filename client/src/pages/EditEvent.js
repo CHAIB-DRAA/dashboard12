@@ -43,7 +43,7 @@ export default function EventDetails() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`http://localhost:5050/events/${params.id}`);
+        const response = await fetch(`https://fullcalendar-backend.onrender.com/events/${params.id}`);
 
         if (!response.ok) {
           throw new Error(`An error has occurred: ${response.statusText}`);
@@ -229,12 +229,12 @@ export default function EventDetails() {
     try {
       // Supprimer l'ancien événement si nécessaire
       if (params.id) {
-        await fetch(`http://localhost:5050/events/${params.id}`, {
+        await fetch(`https://fullcalendar-backend.onrender.com/events/${params.id}`, {
           method: "DELETE",
         });
       }
 
-      const response = await fetch("http://localhost:5050/events", {
+      const response = await fetch("https://fullcalendar-backend.onrender.com/events", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

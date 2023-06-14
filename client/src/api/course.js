@@ -3,7 +3,7 @@
 // Function to create a new event
 export const createCourses = async (coursetData) => {
     try {
-      const response = await fetch('http://localhost:5050/courses', {
+      const response = await fetch('https://fullcalendar-backend.onrender.com/courses', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ export const createCourses = async (coursetData) => {
 // Function to fetch all events
 export const getCourses = async () => {
   try {
-    const response = await fetch('http://localhost:5050/courses');
+    const response = await fetch('https://fullcalendar-backend.onrender.com/courses');
 
     if (!response.ok) {
       throw new Error(`An error occurred: ${response.statusText}`);
@@ -45,7 +45,7 @@ export const getCourses = async () => {
 // Function to delete an event
 export const deleteEvent = async (eventId) => {
   try {
-    const response = await fetch(`http://localhost:5050/courses/${eventId}`, {
+    const response = await fetch(`https://fullcalendar-backend.onrender.com/courses/${eventId}`, {
       method: 'DELETE',
     });
 
@@ -64,7 +64,7 @@ export const deleteEvent = async (eventId) => {
 // Function to update an event
 export const updateEvent = async (eventId, eventData) => {
   try {
-    const response = await fetch(`http://localhost:5050/courses/${eventId}`, {
+    const response = await fetch(`https://fullcalendar-backend.onrender.com/courses/${eventId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

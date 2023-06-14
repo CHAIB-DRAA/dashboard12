@@ -27,7 +27,7 @@ export default function CreatEvent() {
   useEffect(() => {
     async function getRecords() {
       const id = params.id.toString();
-      const response = await fetch(`http://localhost:5050/record/${id}`);
+      const response = await fetch(`https://fullcalendar-backend.onrender.com/record/${id}`);
 
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
@@ -52,7 +52,7 @@ export default function CreatEvent() {
     // When a post request is sent to the create url, we'll add a new record to the database.
     const newPerson = { ...form };
 
-    await fetch("http://localhost:5050/courses", {
+    await fetch("https://fullcalendar-backend.onrender.com/courses", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

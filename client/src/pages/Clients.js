@@ -44,7 +44,7 @@ export default function Client() {
  // This method fetches the records from the database.
  useEffect(() => {
    async function getRecords() {
-     const response = await fetch(`http://localhost:5050/events/`);
+     const response = await fetch(`https://fullcalendar-backend.onrender.com/events/`);
  
      if (!response.ok) {
        const message = `An error occurred: ${response.statusText}`;
@@ -103,7 +103,7 @@ EditToolbar.propTypes = {
    const handleDeleteClick = (id) => () => {
     async function deleteRow(){
 
-      await fetch(`http://localhost:5050/events/${id}`, {
+      await fetch(`https://fullcalendar-backend.onrender.com/events/${id}`, {
       method: "DELETE"
     });
   

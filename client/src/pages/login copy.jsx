@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import '../style/login.css';
 async function loginUser(credentials) {
-  return fetch('http://localhost:5050/login', {
+  return fetch('https://fullcalendar-backend.onrender.com/login', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
