@@ -52,14 +52,17 @@ export default function Account({ session }) {
   }
 
   return (
-    <form onSubmit={updateProfile} className="form-widget">
+    <form onSubmit={updateProfile} className="form-widget" style= {{width:'20%', margin:'auto', display:'flex',
+    flexDirection:'column', gap:'2rem'}}>
       
-      <div>
-        <label htmlFor="email">Email</label>
+      <div style= {{ display:'flex',
+    flexDirection:'row', gap:'2rem'}}>
+        <label htmlFor="email">Adresse mail</label>
         <input id="email" type="text" value={session.user.email} disabled />
       </div>
-      <div>
-        <label htmlFor="username">Name</label>
+      <div style= {{ display:'flex',
+    flexDirection:'row', gap:'2rem'}}>
+        <label htmlFor="username">Nom</label>
         <input
           id="username"
           type="text"
@@ -68,8 +71,9 @@ export default function Account({ session }) {
           onChange={(e) => setUsername(e.target.value)}
         />
       </div>
-      <div>
-        <label htmlFor="website">Website</label>
+      <div style= {{ display:'flex',
+    flexDirection:'row', gap:'2rem'}}>
+        <label htmlFor="website">site Web</label>
         <input
           id="website"
           type="url"
@@ -86,7 +90,7 @@ export default function Account({ session }) {
 
       <div>
         <button className="button block" type="button" onClick={() => supabase.auth.signOut()}>
-          Sign Out
+          Déconnexion
         </button>
       </div>
     </form>
